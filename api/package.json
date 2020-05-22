@@ -1,0 +1,26 @@
+{
+  "name": "asset-tracker",
+  "version": "1.0.0",
+  "description": "Store records of distributed assets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ranaco-Phillips/asset-tracker.git"
+  },
+  "author": "Ranaco Phillips",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ranaco-Phillips/asset-tracker/issues"
+  },
+  "homepage": "https://github.com/Ranaco-Phillips/asset-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
