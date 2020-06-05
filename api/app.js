@@ -5,6 +5,11 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 
 var locationsRouter = require('./routes/locations');
+var assetTypeRouter = require('./routes/assetTypes');
+var usersRouter = require('./routes/users');
+//var assetsRouter = require('./routes/assets');
+var logsRouter = require('./routes/logs');
+
 
 const app = express();
 
@@ -12,7 +17,7 @@ const app = express();
 mongoose.connect('mongodb+srv://ranaco022:'+ 
 	process.env.MONGO_ATLAS_PW +
 	'@dashboard-rest-api-itz8p.mongodb.net/asset-records?retryWrites=true&w=majority',
-	{ useUnifiedTopology: true, useNewUrlParser: true }, 
+	{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, 
 	() => console.log('connected to DB!')
 );
 
@@ -28,6 +33,10 @@ app.use((req, res, next) => {
 });
 
 app.use('/', locationsRouter);
+app.use('/', assetTypeRouter);
+app.use('/', usersRouter);
+//app.use('/', usersRouter);
+app.use('/', logsRouter);
 
 app.listen(port, function () {
     console.log(`App is listening on port ${port}.`);
